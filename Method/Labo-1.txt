@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    internal class Program
+    {
+        void textvatch(string text, out int a)
+        {
+            a = 0;
+            for(int i = 0; i < text.Length; i++)
+            {
+                if (text[i] == 'e')
+                {
+                    a ++;
+                }
+            }
+        }
+        static void Main()
+        {
+            string text = "Привeт мир, да здраствуeт Импeратор!";
+            Console.WriteLine(text);
+            textvatch( out int a) ;
+            if (a > 0)
+            {
+                Console.WriteLine("В тексте есть латинские E");
+            }
+            else
+            {
+                Console.WriteLine("В консоли нет латинских E");
+            }
+            //Console.WriteLine(a);
+            Console.ReadLine();
+        }
+    }
+}
