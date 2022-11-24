@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    internal class Program
+    {
+        static void Main()
+        {
+
+            Console.WriteLine();
+            Console.WriteLine("Задание 4");
+            Console.Write("Ввод n : ");
+            int miN=Convert.ToInt32(Console.ReadLine());
+            int koe = 5, hour=0, minute=0;
+            for(int i=0; i < miN; i++)
+            {
+                hour = hour + 1;
+                minute =  koe * (2 + hour);
+            }
+            Console.WriteLine($"Время :  Часы : {hour} Минуты : {minute}");
+            Console.ReadLine();
+        }
+    }
+}
