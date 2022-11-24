@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Labo_2
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            double[] a = new double[7];
+            Console.Write("Ввод : ");
+            a = Console.ReadLine().Split(' ').Select(n => double.Parse(n)).ToArray();
+            double[] b = new double[7];
+            Array.Copy(a, b, a.Length);
+            Console.Write("X : ");
+            double x = Convert.ToDouble(Console.ReadLine());
+            Array.Sort(a);
+            Console.Write("Вывод 1 : ");
+            for (int i = 0; i < a.Length; i++)
+            {
+                if ((int)b[i] % 2 == 0)
+                {
+                    Console.Write(b[i] + " ");
+                }
+            }
+            Console.WriteLine();
+            Console.Write("Вывод 2 : ");
+            for (int i = 0; i < a.Length; i++)
+            {
+                if ((int)a[i] % 2 == 1)
+                {
+                    if (a[i] > x)
+                    {
+                        Console.Write(a[i] + " ");
+                    }
+                }
+            }
+            Console.ReadLine();
+        }
+    }
+}
