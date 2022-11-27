@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Collections
+{
+    internal class Program
+    {
+        public static void Main()
+        {
+            String text = Console.ReadLine();
+            List<char> souText = new List<char>(text.ToCharArray());
+            List<string> enText = Encrypt(souText);
+
+            foreach (string symbol in enText)
+            {
+                Console.Write(symbol + " ");
+            }
+            Console.ReadLine();
+        }
+
+        private static List<string> Encrypt(List<char> souText)
+        {
+            List<string> enText = new List<string>(souText.Count);
+            List<char> sortList = new List<char>(souText);
+            sortList.Sort();
+
+            for (int i = 0; i < sortList.Count; i++)
+            {
+                for (int j = 0; j < souText.Count; j++)
+                {
+                    if (sortList[i] == souText[j] && enText.Contains(j.ToString()) == false)
+                    {
+                        if (enText.Contains(sortList[i].ToString()) == false)
+                        {
+                            enText.Add(sortList[i].ToString());
+                        }
+
+                        enText.Add(j.ToString());
+                    }
+                }
+            }
+            return enText;
+        }
+    }
+}

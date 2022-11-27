@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Class
+{
+    internal class Program
+    {
+        public class MyString
+        {
+            public string Array;
+            public string Rev()
+            {
+                string t = " ";
+                for(int i = Array.Length - 1; i >= 0; i--)
+                {
+                    t = t + Array[i];
+                }
+                return t;
+            }
+            public string SyFirst()
+            {
+                return Array.Substring(0, 1).ToUpper() + Array.Substring(1);
+            }
+            public string SyAll()
+            {
+                string temt = " ";
+                foreach(string s in Array.Split(' '))
+                {
+                    temt = temt + s.Substring(0, 1).ToUpper() + s.Substring(1) + " ";
+                }
+                return temt;
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            var myst = new MyString();
+            Console.WriteLine("Введите строку : ");
+            myst.Array = Console.ReadLine();
+            Console.WriteLine(myst.Rev());
+            Console.WriteLine(myst.SyFirst());
+            Console.WriteLine(myst.SyAll());
+            Console.ReadLine();
+        }
+    }
+}

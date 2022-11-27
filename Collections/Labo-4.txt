@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Collections
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Введите число : ");
+            int n;
+            n = Convert.ToInt32(Console.ReadLine());
+            List<int> list0 = new List<int>();
+            int[] temp = new int[100];
+            int result = 0;
+            while (n != 1)
+            {
+                n = n % 2 == 0 ? n /= 2 : 3 * n + 1;
+                temp[result] = n;
+                result++;
+            }
+            list0 = temp.ToList();
+            for(int i = 0; i < list0.Count; i++)
+            {
+                if (list0[i] != 0) Console.Write(list0[i] + " ");
+            }
+            Console.ReadLine();
+        }
+    }
+}

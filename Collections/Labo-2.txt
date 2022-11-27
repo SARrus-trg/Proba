@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Collections
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Введите числа через пробел : ");
+            int[] arr = Console.ReadLine().Split(' ').Select(n => int.Parse(n)).ToArray();
+            int Ind1 = Array.IndexOf(arr, 0);
+            int Ind2 = Array.LastIndexOf(arr, 0);
+            Array.Sort(arr, Ind1, Ind2 - Ind1);
+            List<int> list = arr.ToList();
+            for (var A = Ind1 - 1; A >= Ind1 + 1; A--)
+            {
+                Console.Write(list[A] + " ");
+            }
+            Console.ReadLine();
+        }
+    }
+}
