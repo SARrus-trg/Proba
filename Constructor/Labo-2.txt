@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace ConsoleApp7
+{
+    internal class Program
+    {
+        public class Barrel
+        {
+            public string material;
+            public int volume;
+            public void ToChange(string material)
+            {
+                this.material = material;
+            }
+            public void ToChange(int volume)
+            {
+                this.volume = volume;
+            }
+        }
+        public static void Main()
+        {
+            var barrel = new Barrel();
+            barrel.material = "oak";
+            barrel.volume = 200;
+            barrel.ToChange(100);
+            barrel.ToChange("beech");
+            Console.WriteLine($"{barrel.material}, {barrel.volume}");
+            Console.ReadLine();
+        }
+    }
+}
